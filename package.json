@@ -1,0 +1,38 @@
+{
+  "name": "lightiz-ui",
+  "version": "0.0.1",
+  "description": "A collection of pre-built ui components ",
+  "keywords": [
+    "lightiz-ui",
+    "ui",
+    "smtdfc"
+  ],
+  "author": "smtdfc",
+  "license": "MIT",
+  "main": "dist/index.cjs.min.js",
+  "module": "dist/index.esm.min.js",
+  "unpkg": "dist/index.min.js",
+  "scripts": {
+    "build": "rollup -c rollup.config.mjs --bundleConfigAsCjs "
+  },
+  "files": [
+    "dist/*",
+    "index.js",
+    "main.css"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smtdfc/lightiz-ui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/smtdfc/lightiz-ui/issues"
+  },
+  "homepage": "https://github.com/smtdfc/lightiz-ui/tree/main/packages/ui",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^28.0.3",
+    "@rollup/plugin-node-resolve": "^16.0.1",
+    "@rollup/plugin-terser": "^0.4.4",
+    "rollup-plugin-scss": "^4.0.1",
+    "sass": "^1.86.3"
+  }
+}
