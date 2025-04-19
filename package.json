@@ -1,10 +1,11 @@
 {
 	"name": "lightiz-ui",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"description": "A collection of pre-built ui components ",
 	"keywords": [
 		"lightiz-ui",
 		"ui",
+		"components",
 		"smtdfc"
 	],
 	"author": "smtdfc",
@@ -37,7 +38,7 @@
 	"bugs": {
 		"url": "https://github.com/smtdfc/lightiz-ui/issues"
 	},
-	"homepage": "https://github.com/smtdfc/lightiz-ui/tree/main/packages/ui",
+	"homepage": "https://github.com/smtdfc/lightiz-ui/",
 	"devDependencies": {
 		"@babel/core": "^7.26.10",
 		"@babel/preset-typescript": "^7.27.0",
