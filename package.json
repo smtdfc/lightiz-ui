@@ -1,38 +1,51 @@
 {
-  "name": "lightiz-ui",
-  "version": "0.0.1",
-  "description": "A collection of pre-built ui components ",
-  "keywords": [
-    "lightiz-ui",
-    "ui",
-    "smtdfc"
-  ],
-  "author": "smtdfc",
-  "license": "MIT",
-  "main": "dist/index.cjs.min.js",
-  "module": "dist/index.esm.min.js",
-  "unpkg": "dist/index.min.js",
-  "scripts": {
-    "build": "rollup -c rollup.config.mjs --bundleConfigAsCjs "
-  },
-  "files": [
-    "dist/*",
-    "index.js",
-    "main.css"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/smtdfc/lightiz-ui.git"
-  },
-  "bugs": {
-    "url": "https://github.com/smtdfc/lightiz-ui/issues"
-  },
-  "homepage": "https://github.com/smtdfc/lightiz-ui/tree/main/packages/ui",
-  "devDependencies": {
-    "@rollup/plugin-commonjs": "^28.0.3",
-    "@rollup/plugin-node-resolve": "^16.0.1",
-    "@rollup/plugin-terser": "^0.4.4",
-    "rollup-plugin-scss": "^4.0.1",
-    "sass": "^1.86.3"
-  }
+	"name": "lightiz-ui",
+	"version": "0.0.1",
+	"description": "A collection of pre-built ui components ",
+	"keywords": [
+		"lightiz-ui",
+		"ui",
+		"smtdfc"
+	],
+	"author": "smtdfc",
+	"license": "MIT",
+	"main": "dist/index.cjs.min.js",
+	"module": "dist/index.esm.min.js",
+	"unpkg": "dist/index.min.js",
+	"scripts": {
+		"build": "npm run build:js && npm run build:css",
+		"build:js": "NODE_ENV=production BUILD_TARGET=js rollup -c --bundleConfigAsCjs",
+		"build:css": "NODE_ENV=production BUILD_TARGET=css rollup -c --bundleConfigAsCjs",
+		"build:dev": "npm run build:js:dev && npm run build:css:dev",
+		"build:js:dev": "BUILD_TARGET=js rollup -c --bundleConfigAsCjs",
+		"build:css:dev": "BUILD_TARGET=css rollup -c --bundleConfigAsCjs",
+		"dec": "tsc --declaration --allowJs --emitDeclarationOnly",
+		"type": "tsc --noEmit",
+		"start": "node dist/index.js",
+		"test": "echo \"No tests yet\"",
+		"prepublishOnly": "npm run type && npm run dec && npm run build"
+	},
+	"files": [
+		"dist/*",
+		"index.js",
+		"main.css"
+	],
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/smtdfc/lightiz-ui.git"
+	},
+	"bugs": {
+		"url": "https://github.com/smtdfc/lightiz-ui/issues"
+	},
+	"homepage": "https://github.com/smtdfc/lightiz-ui/tree/main/packages/ui",
+	"devDependencies": {
+		"@babel/core": "^7.26.10",
+		"@babel/preset-typescript": "^7.27.0",
+		"@rollup/plugin-babel": "^6.0.4",
+		"@rollup/plugin-commonjs": "^28.0.3",
+		"@rollup/plugin-node-resolve": "^16.0.1",
+		"@rollup/plugin-terser": "^0.4.4",
+		"rollup-plugin-scss": "^4.0.1",
+		"sass": "^1.86.3"
+	}
 }

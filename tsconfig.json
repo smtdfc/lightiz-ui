@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "declarationDir": "./dist/",
+    "outDir": "./dist",
+    "esModuleInterop": true,
+    "strict": true,
+    "target": "ES6",
+    "module": "ESNext"
+  },
+  "include": ["src/**/*","**/scss.d.ts"],
+  "exclude": ["node_modules"]
+}
