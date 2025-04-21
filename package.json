@@ -10,9 +10,18 @@
 	],
 	"author": "smtdfc",
 	"license": "MIT",
-	"main": "dist/index.cjs.min.js",
-	"module": "dist/index.esm.min.js",
-	"unpkg": "dist/index.min.js",
+	"main": "./dist/index.cjs",
+	"module": "./dist/index.esm.js",
+	"exports": {
+		"import": "./dist/index.esm.js",
+		"require": "./dist/index.cjs",
+		"types": "./dist/index.d.ts",
+		".": {
+			"import": "./dist/index.esm.js",
+			"require": "./dist/index.cjs",
+			"types": "./dist/index.d.ts"
+		}
+	},
 	"scripts": {
 		"build": "npm run build:js && npm run build:css",
 		"build:js": "NODE_ENV=production BUILD_TARGET=js rollup -c --bundleConfigAsCjs",

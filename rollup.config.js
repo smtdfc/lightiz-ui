@@ -53,15 +53,15 @@ const jsConfig = {
   input: path.join(__dirname, 'src/index.ts'),
   output: [
     {
-      file: path.join(__dirname, `dist/index.${isProd ? 'esm.min.js' : 'esm.js'}`),
+      file: path.join(__dirname, `dist/index.esm.js`),
       format: 'esm',
     },
     {
-      file: path.join(__dirname, `dist/index.${isProd ? 'cjs.min.js' : 'cjs.js'}`),
+      file: path.join(__dirname, `dist/index.cjs.js`),
       format: 'cjs',
     },
     {
-      file: path.join(__dirname, `dist/index.${isProd ? 'min.js' : 'js'}`),
+      file: path.join(__dirname, `dist/index.min.js`),
       format: 'iife',
       name: 'LightizUI',
     },
