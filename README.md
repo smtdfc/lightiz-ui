@@ -1,6 +1,6 @@
 # 🌟 Lightiz UI
 
- A blazing-fast UI framework powered by configuration-first CSS generation.
+ A UI framework powered by configuration-first CSS generation.
 
 ---
 
