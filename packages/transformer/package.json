@@ -1,0 +1,44 @@
+{
+  "name": "lightizui-transformer",
+  "version": "0.0.1",
+  "description": "Transformer for LightizUI style config into CSS output",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "lightizui",
+    "css",
+    "transformer",
+    "ui",
+    "design-system"
+  ],
+  "author": "smtdfc",
+  "license": "MIT",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^5.4.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smtdfc/lightiz-ui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/smtdfc/lightiz-ui/issues"
+  },
+  "homepage": "https://github.com/smtdfc/lightiz-ui#readme"
+}

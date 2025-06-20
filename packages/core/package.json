@@ -1,0 +1,28 @@
+{
+  "name": "lightiz-ui",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smtdfc/lightiz-ui.git"
+  },
+  "keywords": [
+    "ui",
+    "framework",
+    "scss",
+    "css",
+    "style",
+    "js",
+    "smtdfc"
+  ],
+  "author": "smtdfc",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/smtdfc/lightiz-ui/issues"
+  },
+  "homepage": "https://github.com/smtdfc/lightiz-ui#readme",
+  "description": ""
+}

@@ -1,0 +1,52 @@
+{
+  "name": "lightizui-webpack",
+  "version": "1.0.0",
+  "description": "Webpack loader and plugin for handling LightizUI style config files",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "tsc --watch",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "lightizui",
+    "webpack",
+    "loader",
+    "css",
+    "transformer",
+    "design-system"
+  ],
+  "author": "smtdfc",
+  "license": "MIT",
+  "dependencies": {
+    "lightizui-transformer": "^0.0.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0",
+    "webpack": "^5.90.0",
+    "@types/webpack": "^5.0.0"
+  },
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "peerDependencies": {
+    "webpack": "^5.0.0"
+  },
+    "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smtdfc/lightiz-ui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/smtdfc/lightiz-ui/issues"
+  },
+  "homepage": "https://github.com/smtdfc/lightiz-ui#readme"
+}
