@@ -2,13 +2,25 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
 }
 
-html.debug *{
+:focus {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+}
+
+
+
+html.debug * {
   outline: 1px solid red;
 }
 
-body{
+body {
   box-sizing: border-box;
 }
 
@@ -49,7 +61,7 @@ body{
   
   --main-color: var(--text-color);
   --main-bg: var(--bg-color);
-  --main-hover-color:rgba(0,0,0,0.05);
+  --main-hover-color: rgba(0, 0, 0, 0.05);
   
   --breakpoint-sm: 640px;
   --breakpoint-md: 768px;

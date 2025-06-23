@@ -110,3 +110,9 @@ input[type="radio"].form-radio:checked::after {
   background-color: var(--form-check-color);
   border-radius: 50%;
 }
+
+.form-text{
+  margin: 0.2rem;
+  color: var(--main-color);
+  font-size: 14px;
+}
