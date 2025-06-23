@@ -1,0 +1,206 @@
+.btn{
+  --btn-bg:transparent;
+  --btn-border-color:var(--btn-bg);
+  --btn-color:var(--main-text);
+  margin: 0.2rem;
+  background: var(--btn-bg);
+  color: var(--btn-color);
+  border: solid 1.5px var(--btn-border-color);
+  border-color: var(--btn-border-color);
+  padding: 0.6rem;
+  border-radius: 5px;
+  transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.btn-icon-text{
+  display: flex;
+  align-items: center;
+  column-gap: 5px;
+}
+
+.btn-rounded{
+  border-radius:20px!important;
+}
+
+.btn-fullwidth {
+  width: 100%;
+}
+
+.btn:hover{
+  transform: scale(0.99);
+}
+
+.btn-primary {
+  --btn-bg: var(--color-primary);
+  --btn-color: var(--color-on-primary);
+}
+
+.btn-secondary {
+  --btn-bg: var(--color-secondary);
+  --btn-color: var(--color-on-secondary);
+}
+
+.btn-success {
+  --btn-bg: var(--color-success);
+  --btn-color: var(--color-on-success);
+}
+
+.btn-danger {
+  --btn-bg: var(--color-danger);
+  --btn-color: var(--color-on-danger);
+}
+
+.btn-warning {
+  --btn-bg: var(--color-warning);
+  --btn-color: var(--color-on-warning);
+}
+
+.btn-info {
+  --btn-bg: var(--color-info);
+  --btn-color: var(--color-on-info);
+}
+
+.btn-light {
+  --btn-bg: var(--color-light);
+  --btn-color: var(--color-on-light);
+}
+
+.btn-dark {
+  --btn-bg: var(--color-dark);
+  --btn-color: var(--color-on-dark);
+}
+
+.btn-outline-primary {
+  --btn-bg: transparent;
+  --btn-color: var(--color-primary);
+  --btn-border-color: var(--color-primary);
+}
+
+.btn-outline-primary:hover {
+  --btn-bg: var(--color-primary);
+  --btn-color: var(--color-on-primary);
+}
+
+.btn-outline-secondary {
+  --btn-bg: transparent;
+  --btn-color: var(--color-secondary);
+  --btn-border-color: var(--color-secondary);
+}
+
+.btn-outline-secondary:hover {
+  --btn-bg: var(--color-secondary);
+  --btn-color: var(--color-on-secondary);
+}
+
+.btn-outline-success {
+  --btn-bg: transparent;
+  --btn-color: var(--color-success);
+  --btn-border-color: var(--color-success);
+}
+
+.btn-outline-success:hover {
+  --btn-bg: var(--color-success);
+  --btn-color: var(--color-on-success);
+}
+
+.btn-outline-danger {
+  --btn-bg: transparent;
+  --btn-color: var(--color-danger);
+  --btn-border-color: var(--color-danger);
+}
+
+.btn-outline-danger:hover {
+  --btn-bg: var(--color-danger);
+  --btn-color: var(--color-on-danger);
+}
+
+.btn-outline-warning {
+  --btn-bg: transparent;
+  --btn-color: var(--color-warning);
+  --btn-border-color: var(--color-warning);
+}
+
+.btn-outline-warning:hover {
+  --btn-bg: var(--color-warning);
+  --btn-color: var(--color-on-warning);
+}
+
+.btn-outline-info {
+  --btn-bg: transparent;
+  --btn-color: var(--color-info);
+  --btn-border-color: var(--color-info);
+}
+
+.btn-outline-info:hover {
+  --btn-bg: var(--color-info);
+  --btn-color: var(--color-on-info);
+}
+
+.btn-outline-light {
+  --btn-bg: transparent;
+  --btn-color: var(--color-light);
+  --btn-border-color: var(--color-light);
+}
+
+.btn-outline-light:hover {
+  --btn-bg: var(--color-light);
+  --btn-color: var(--color-on-light);
+}
+
+.btn-outline-dark {
+  --btn-bg: transparent;
+  --btn-color: var(--color-dark);
+  --btn-border-color: var(--color-dark);
+}
+
+.btn-outline-dark:hover {
+  --btn-bg: var(--color-dark);
+  --btn-color: var(--color-on-dark);
+}
+
+.btn-icon{
+  margin: 0.2rem;
+  padding: 0.4rem;
+  background: transparent;
+  color:var(--main-text);
+  border:none;
+  transition: background 0.3s ease-in-out;
+}
+
+.btn-circle{
+  border-radius: 50%!important;
+}
+
+.btn-icon:hover{
+  background: var(--main-hover-color);
+}
+
+.btn-xs {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.625rem; /* 10px */
+  border-radius: 3px;
+}
+
+.btn-sm {
+  padding: 0.4rem 0.75rem;
+  font-size: 0.75rem;
+  border-radius: 4px;
+}
+
+.btn-md {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem; /* 14px */
+  border-radius: 6px;
+}
+
+.btn-lg {
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem; /* 16px */
+  border-radius: 8px;
+}
+
+.btn-xl {
+  padding: 1rem 1.5rem;
+  font-size: 1.125rem; /* 18px */
+  border-radius: 10px;
+}

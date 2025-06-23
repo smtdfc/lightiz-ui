@@ -24,9 +24,29 @@ function getComponentCode(
   return fs.readFileSync(cssPath, 'utf-8');
 }
 
+function getBaseCode(
+  config: LightizUIConfig,
+): string {
+  const cssPath = path.resolve(
+    __dirname,
+    config.base,
+    'dist/styles/',
+    `index.css`
+  );
+  
+  if (!fs.existsSync(cssPath)) {
+    console.warn(`[LightizUI] Warning: index.css not found at ${cssPath}`);
+    return '';
+  }
+  
+  return fs.readFileSync(cssPath, 'utf-8');
+}
+
+
 export function transform(config: LightizUIConfig): string {
   let code = `/* LightizUI Auto Generated */\n`;
   
+  code += getBaseCode(config)
   for (const component of config.use) {
     code += `\n/* ${component}.css */\n`;
     code += getComponentCode(config, component);
