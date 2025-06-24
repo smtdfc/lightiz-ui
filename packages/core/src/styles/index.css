@@ -50,14 +50,15 @@ body {
   --bg-color: #ffffff;
   --bg-muted: #f8f9fa;
   
-  --color-primary-50: rgba(13, 110, 253, 0.5);
-  --color-secondary-50: rgba(108, 117, 125, 0.5);
-  --color-success-50: rgba(25, 135, 84, 0.5);
-  --color-danger-50: rgba(220, 53, 69, 0.5);
-  --color-warning-50: rgba(255, 193, 7, 0.5);
-  --color-info-50: rgba(13, 202, 240, 0.5);
-  --color-light-50: rgba(248, 249, 250, 0.5);
-  --color-dark-50: rgba(33, 37, 41, 0.5);
+  
+  --color-primary-50: #d6e4ff;
+  --color-secondary-50: #e2e3e5;
+  --color-success-50: #d1e7dd;
+  --color-danger-50: #f8d7da;
+  --color-warning-50: #fff3cd;
+  --color-info-50: #cff4fc;
+  --color-light-50: #fefefe;
+  --color-dark-50: #d3d3d4;
   
   --main-color: var(--text-color);
   --main-bg: var(--bg-color);
