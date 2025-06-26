@@ -1,5 +1,13 @@
 import { LightizUIMetadata } from '../types/index.js';
-import { getMetadata } from '../utils/index.js';
+import { getMetadata, createElement } from '../utils/index.js';
+
+export type LightizUIToastContainerAnchor = |
+  'top-left' |
+  'top-right' |
+  'top-center' |
+  'bottom-left' |
+  'bottom-right' |
+  'bottom-center';
 
 export interface LightizUIToastOptions {
   autoHide: boolean;
@@ -12,6 +20,7 @@ export class LightizUIToast {
   private timeoutId: ReturnType < typeof setTimeout > | null = null;
   public options: LightizUIToastOptions;
   
+  static rootContainer = LightizUIToast.createContainer('bottom-center');
   constructor(
     public root: HTMLElement,
     options ? : Partial < LightizUIToastOptions >
@@ -69,4 +78,73 @@ export class LightizUIToast {
       this.root.addEventListener('animationend', onAnimationEnd);
     }
   }
+  
+  static createContainer(
+    anchor: LightizUIToastContainerAnchor
+  ): HTMLElement {
+    let container = createElement(
+      "span", { "class": `toast-container toast-${anchor}` },
+      []
+    );
+    
+    return container;
+  }
+  
+  static showInfo(
+    message: string,
+    options ? : LightizUIToastOptions
+  ): LightizUIToast {
+    let root = createElement(
+      "span", { "class": "toast toast-info" },
+      [message]
+    );
+    LightizUIToast.rootContainer.appendChild(root);
+    let ins = new LightizUIToast(root, options);
+    ins.show();
+    return ins;
+  }
+  
+  static showSuccess(
+    message: string,
+    options ? : LightizUIToastOptions
+  ): LightizUIToast {
+    let root = createElement(
+      "span", { "class": "toast toast-success" },
+      [message]
+    );
+    LightizUIToast.rootContainer.appendChild(root);
+    let ins = new LightizUIToast(root, options);
+    ins.show();
+    return ins;
+  }
+  
+  static showWarn(
+    message: string,
+    options ? : LightizUIToastOptions
+  ): LightizUIToast {
+    let root = createElement(
+      "span", { "class": "toast toast-warning" },
+      [message]
+    );
+    LightizUIToast.rootContainer.appendChild(root);
+    let ins = new LightizUIToast(root, options);
+    ins.show();
+    return ins;
+  }
+  
+  static showDanger(
+    message: string,
+    options ? : LightizUIToastOptions
+  ): LightizUIToast {
+    let root = createElement(
+      "span", { "class": "toast toast-danger" },
+      [message]
+    );
+    LightizUIToast.rootContainer.appendChild(root);
+    let ins = new LightizUIToast(root, options);
+    ins.show();
+    return ins;
+  }
 }
+
+document.body.appendChild(LightizUIToast.rootContainer);

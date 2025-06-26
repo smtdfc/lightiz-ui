@@ -18,3 +18,25 @@ export function getMetadata(
     return fallback;
   }
 }
+
+export function createElement(
+  tag: string,
+  attrs: Record < string, any > = {},
+  children: (Node | string)[] = []
+): HTMLElement {
+  const element = document.createElement(tag);
+  
+  for (const [key, value] of Object.entries(attrs)) {
+    element.setAttribute(key, String(value));
+  }
+  
+  for (const child of children) {
+    element.appendChild(
+      typeof child != 'object' ?
+      document.createTextNode(String(child)) :
+      child
+    );
+  }
+  
+  return element;
+}
