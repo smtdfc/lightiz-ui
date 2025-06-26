@@ -7,7 +7,10 @@ interface HTMLElementWithLightiz extends HTMLElement {
 
 export function getMetadata(
   element: HTMLElement,
-  fallback: LightizUIMetadata
+  fallback: LightizUIMetadata={
+    type:"unknown",
+    data:{}
+  }
 ): LightizUIMetadata {
   const el = element as HTMLElementWithLightiz;
 
