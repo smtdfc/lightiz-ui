@@ -39,7 +39,7 @@
   padding: 0.3rem;
 }
 
-.form-group.vertial {
+.form-group.vertical { 
   align-items: flex-start;
   flex-direction: column;
   row-gap: 2px;

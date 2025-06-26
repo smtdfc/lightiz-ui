@@ -79,9 +79,8 @@ module.exports = {
 2. Import it in your JS/TS entry point:
 
 ```ts
-import styles from './main.lightizui.style';
+import './main.lightizui.style';
 
-console.log(styles); // The generated CSS string
 ```
 
 3. Or use a plugin to emit CSS as a separate file (optional plugin support coming soon).
