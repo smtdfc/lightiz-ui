@@ -1,0 +1,58 @@
+@use "sass:map";
+@use "../variables/colors" as *;
+
+.accordion {
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  
+  .accordion-item {
+    --accordion-item-header-bg: #{map.get($colors-50,"primary")};
+    --accordion-item-header-color: #{map.get($colors,"primary")};
+    --accordion-item-body-bg: #{map.get($theme,"main-bg")};
+    --accordion-item-body-color: #{map.get($theme,"main-color")};
+    
+    &+.accordion-item {
+      border-top: 1px solid var(--border-color, #ddd);
+    }
+    
+    .accordion-header {
+      background: var(--accordion-item-header-bg);
+      color: var(--accordion-item-header-color);
+      padding: 1rem;
+      text-align: left;
+      width: 100%;
+      font-weight: 500;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      
+      .accordion-icon {
+        margin-left: auto;
+        transition: transform 0.3s ease-in-out;
+      }
+    }
+    
+    .accordion-body {
+      max-height: 0;
+      overflow: hidden;
+      background: var(--accordion-item-body-bg);
+      color: var(--accordion-item-body-color);
+      transition: max-height 0.3s ease;
+      padding: 0 1rem;
+    }
+    
+    &.active {
+      .accordion-icon {
+        transform: rotate(180deg);
+      }
+      
+      .accordion-body {
+        max-height: 500px;
+        padding: 1rem;
+      }
+    }
+  }
+}

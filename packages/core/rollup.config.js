@@ -6,7 +6,7 @@ export default {
   output: {
     file: './dist/index.js',
     format: 'esm',
-    sourcemap: true,
+    sourcemap: false,
     paths: {
       'lightizui-transformer': '../../transformer/dist/index.js'
     }

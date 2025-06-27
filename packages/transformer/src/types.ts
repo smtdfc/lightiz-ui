@@ -1,9 +1,23 @@
 export type LightizUIComponent =
-  | 'navbar'
-  | 'sidebar'
-  | 'offcanvas'
+  | 'accordion'
+  | 'button'
+  | 'card' 
+  | 'form' 
+  | 'loader' 
+  | 'modal' 
+  | 'switch' 
+  | 'tab' 
+  | 'toast' 
+
+export type LightizUIHelper =
+  | 'text'
+  | 'background'
+  | 'spacings'
+  | 'display'
+  | 'border'
 
 export interface LightizUIConfig {
   base:string | 'lightizui',
-  use:Array<LightizUIComponent>
+  components?:Array<LightizUIComponent>,
+  helpers?:Array<LightizUIHelper>
 }

@@ -1,0 +1,116 @@
+@use "sass:map";
+@use "../variables/colors" as *;
+
+%base-check {
+  --form-check-color: #{map.get($theme,"main-bg")};
+  --form-check-outline-color: rgba(0, 0, 0, 0.08);
+  
+  appearance: none;
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--form-check-outline-color);
+  background-color: transparent;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+  position: relative;
+}
+
+input[type='checkbox'].form-checkbox {
+  @extend %base-check;
+  border-radius: 4px;
+  
+  &:checked {
+    --form-check-outline-color: #{map.get($colors,"primary")};
+    --form-check-color: #{map.get($colors,"primary")};
+  }
+  
+  &:checked::after {
+    content: '✓';
+    color: var(--form-check-color);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1;
+  }
+}
+
+input[type='radio'].form-radio {
+  @extend %base-check;
+  border-radius: 50%;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+  
+  &:checked {
+    --form-check-outline-color: #{map.get($colors,"primary")};
+    --form-check-color: #{map.get($colors,"primary")};
+  }
+  
+  &:checked::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    background-color: var(--form-check-color);
+    border-radius: 50%;
+  }
+}
+
+.form-input {
+  --form-input-color: var(--main-color);
+  --form-input-outline-color: rgba(0, 0, 0, 0.08);
+  
+  padding: 0.8rem;
+  outline: none;
+  border: 1.5px solid var(--form-input-outline-color);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--form-input-color);
+  transition: border-color 0.2s ease;
+  box-sizing: border-box;
+  flex: 1 1 auto;
+  min-width: 0;
+  
+  &.form-fullwidth {
+    width: 100%;
+  }
+  
+  &:focus {
+    --form-input-outline-color: #{map.get($colors,"primary")};
+  }
+}
+
+.form-label {
+  margin: 0.2rem;
+  
+  &.sub-text {
+    color: gray;
+    font-size: 12px;
+  }
+}
+
+.form-group {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  box-sizing: border-box;
+  padding: 0.3rem;
+  
+  &.vertical {
+    align-items: flex-start;
+    flex-direction: column;
+    row-gap: 2px;
+  }
+}
+
+.form-text {
+  margin: 0.2rem;
+  color: var(--main-color);
+  font-size: 14px;
+}

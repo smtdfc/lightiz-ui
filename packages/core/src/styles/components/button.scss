@@ -1,0 +1,102 @@
+@use "sass:map";
+@use "../variables/colors" as *;
+
+.btn {
+  --btn-bg: transparent;
+  --btn-border-color: var(--btn-bg);
+  --btn-color: #{map.get($theme, main-text)};
+  margin: 0.2rem;
+  background: var(--btn-bg);
+  color: var(--btn-color);
+  border: solid 1.5px var(--btn-border-color);
+  padding: 0.6rem;
+  border-radius: 5px;
+  transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+  
+  &:hover {
+    transform: scale(0.99);
+  }
+}
+
+// btn with icon + layout
+.btn-icon-text {
+  display: flex;
+  align-items: center;
+  column-gap: 5px;
+}
+
+.btn-rounded {
+  border-radius: 20px !important;
+}
+
+.btn-fullwidth {
+  width: 100%;
+}
+
+// circle + hover
+.btn-icon {
+  margin: 0.2rem;
+  padding: 0.4rem;
+  background: transparent;
+  color: #{map.get($theme, main-text)};
+  border: none;
+  transition: background 0.3s ease-in-out;
+  
+  &:hover {
+    background: #{map.get($theme, main-hover-color)};
+  }
+}
+
+.btn-circle {
+  border-radius: 50% !important;
+}
+
+// size variants
+.btn-xs {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.625rem;
+  border-radius: 3px;
+}
+
+.btn-sm {
+  padding: 0.4rem 0.75rem;
+  font-size: 0.75rem;
+  border-radius: 4px;
+}
+
+.btn-md {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  border-radius: 6px;
+}
+
+.btn-lg {
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
+  border-radius: 8px;
+}
+
+.btn-xl {
+  padding: 1rem 1.5rem;
+  font-size: 1.125rem;
+  border-radius: 10px;
+}
+
+// 🔁 Loop sinh class theo màu
+@each $name, $color in $colors {
+  .btn-#{$name} {
+    --btn-bg: #{$color};
+    --btn-color: #{map.get($on-colors, $name)};
+  }
+  
+  .btn-outline-#{$name} {
+    --btn-bg: transparent;
+    --btn-color: #{$color};
+    --btn-border-color: #{$color};
+  }
+  
+  .btn-outline-#{$name}:hover {
+    --btn-bg: #{$color};
+    --btn-color: #{map.get($on-colors, $name)};
+  }
+}

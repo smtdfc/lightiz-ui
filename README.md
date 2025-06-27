@@ -29,8 +29,9 @@ npm install lightizui-webpack --save-dev
 
 ```json
 {
-  "base": "lightizui-core",
-  "use": ["button", "card", "alert"]
+  "base": "lightizui",
+  "components": ["button", "card", "alert"],
+  "helpers": ["text"]
 }
 ```
 
@@ -40,7 +41,7 @@ npm install lightizui-webpack --save-dev
 
 ## 🔧 Webpack Configuration
 
-```js
+```javascript
 const path = require('path');
 
 module.exports = {
@@ -71,16 +72,18 @@ module.exports = {
 
 ```json
 {
-  "base": "lightizui-core",
-  "use": ["button", "card"]
+  "base": "lightizui",
+  "components": ["button", "card"]
 }
 ```
 
 2. Import it in your JS/TS entry point:
 
-```ts
+```typescript
+//index.ts
 import './main.lightizui.style';
 
+const Fragment= <button class="btn btn-primary">Hello</button>;
 ```
 
 3. Or use a plugin to emit CSS as a separate file (optional plugin support coming soon).

@@ -1,0 +1,50 @@
+$colors: (
+  primary: var(--color-primary),
+  secondary: var(--color-secondary),
+  success: var(--color-success),
+  danger: var(--color-danger),
+  warning: var(--color-warning),
+  info: var(--color-info),
+  light: var(--color-light),
+  dark: var(--color-dark)
+);
+
+$on-colors: (
+  primary: var(--color-on-primary),
+  secondary: var(--color-on-secondary),
+  success: var(--color-on-success),
+  danger: var(--color-on-danger),
+  warning: var(--color-on-warning),
+  info: var(--color-on-info),
+  light: var(--color-on-light),
+  dark: var(--color-on-dark)
+);
+
+$colors-50: (
+  primary: var(--color-primary-50),
+  secondary: var(--color-secondary-50),
+  success: var(--color-success-50),
+  danger: var(--color-danger-50),
+  warning: var(--color-warning-50),
+  info: var(--color-info-50),
+  light: var(--color-light-50),
+  dark: var(--color-dark-50)
+);
+
+$text: (
+  default: var(--text-color),
+  muted: var(--text-muted),
+  hover: var(--text-hover)
+);
+
+$background: (
+  default: var(--bg-color),
+  muted: var(--bg-muted)
+);
+
+$theme: (
+  main-color: var(--main-color),
+  main-bg: var(--main-bg),
+  main-hover-color: var(--main-hover-color)
+);
+

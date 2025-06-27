@@ -1,4 +1,4 @@
-import { LightizUIConfig, LightizUIComponent } from './types.js';
+import { LightizUIConfig, LightizUIComponent, LightizUIHelper } from './types.js';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -13,6 +13,25 @@ function getComponentCode(
     __dirname,
     config.base,
     'dist/styles/components',
+    `${component}.css`
+  );
+  
+  if (!fs.existsSync(cssPath)) {
+    console.warn(`[LightizUI] Warning: ${component}.css not found at ${cssPath}`);
+    return '';
+  }
+  
+  return fs.readFileSync(cssPath, 'utf-8');
+}
+
+function getHelperCode(
+  config: LightizUIConfig,
+  component: LightizUIHelper
+): string {
+  const cssPath = path.resolve(
+    __dirname,
+    config.base,
+    'dist/styles/helpers',
     `${component}.css`
   );
   
@@ -46,11 +65,21 @@ function getBaseCode(
 export function transform(config: LightizUIConfig): string {
   let code = `/* LightizUI Auto Generated */\n`;
   
-  code += getBaseCode(config)
-  for (const component of config.use) {
-    code += `\n/* ${component}.css */\n`;
-    code += getComponentCode(config, component);
-    code += '\n';
+  code += getBaseCode(config);
+  if (config.components) {
+    for (const component of config.components) {
+      code += `\n/* ${component}.css */\n`;
+      code += getComponentCode(config, component);
+      code += '\n';
+    }
+  }
+  
+  if (config.helpers) {
+    for (const helper of config.helpers) {
+      code += `\n/* ${helper}.css */\n`;
+      code += getHelperCode(config, helper);
+      code += '\n';
+    }
   }
   
   return code;
