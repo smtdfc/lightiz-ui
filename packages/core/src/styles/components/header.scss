@@ -1,0 +1,38 @@
+@use "sass:map";
+@use "../variables/colors" as *;
+
+
+.header {
+  --header-bg: #{map.get($theme, "main-bg")};
+  --header-color: #{map.get($theme, "main-color")};
+  --header-title-color: var(--header-color);
+  --header-menu-item-color: var(--header-color);
+  --header-menu-item-active-color: #{map.get($colors, "primary")};
+  --header-menu-item-hover-bg: #{map.get($theme, "main-hover-color")};
+  --header-menu-item-hover-color: #{map.get($colors, "primary")};
+  
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--header-bg);
+  color: var(--header-color);
+  transition: box-shadow 0.4s ease;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+
+  &-items {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    margin-left: auto;
+  }
+  
+  &-title{
+    margin: 0px;
+    padding: 0.5rem;
+  }
+}

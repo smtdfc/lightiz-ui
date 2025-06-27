@@ -1,0 +1,48 @@
+@use "sass:map";
+@use "../variables/colors" as *;
+
+
+.badge {
+  --badge-bg: #{map.get($theme, "main-bg")};
+  --badge-color: #{map.get($theme, "main-color")};
+  --badge-radius: 10px;
+  --badge-font-size: 10px;
+  --badge-padding: 5px;
+  --badge-border-width: 1px;
+  
+  padding: var(--badge-padding);
+  border-radius: var(--badge-radius);
+  font-size: var(--badge-font-size);
+  font-weight: bold;
+  color: var(--badge-color);
+  background-color: var(--badge-bg);
+  display: inline-block;
+  text-align: center;
+}
+
+.badge-square {
+  border-radius: 0px;
+}
+
+.badge-outline {
+  border: solid var(--badge-border-width);
+}
+
+
+@each $variant,$_ in $colors {
+  .badge-filled.badge-#{$variant} {
+    --badge-bg: #{map.get($colors, $variant)};
+    --badge-color: #{map.get($on-colors, $variant)};
+  }
+  
+  .badge-tint.badge-#{$variant} {
+    --badge-bg: #{map.get($colors-50, $variant)};
+    --badge-color: #{map.get($colors, $variant)};
+  }
+  
+  .badge-outline.badge-#{$variant} {
+    --badge-bg: transparent;
+    --badge-color: #{map.get($colors, $variant)};
+    border-color: #{map.get($colors, $variant)};
+  }
+}

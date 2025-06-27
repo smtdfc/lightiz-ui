@@ -1,7 +1,7 @@
 import { LightizUIMetadata } from '../types/index.js';
 import { getMetadata } from '../utils/index.js';
 
-export interface AccordionOptions {
+export interface LightizUIAccordionOptions {
   multiple ? : boolean;
 }
 
@@ -11,7 +11,7 @@ export class LightizUIAccordion {
   
   constructor(
     public root: HTMLElement,
-    public options: AccordionOptions = {}
+    public options: LightizUIAccordionOptions = {}
   ) {
     this.root = root;
     
