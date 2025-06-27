@@ -1,6 +1,6 @@
 {
   "name": "lightizui-transformer",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Transformer for LightizUI style config into CSS output",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -30,9 +30,6 @@
     "dist"
   ],
   "dependencies": {},
-  "devDependencies": {
-    "typescript": "^5.4.0"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/smtdfc/lightiz-ui.git"

@@ -1,6 +1,6 @@
 {
   "name": "lightizui-css",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Minimal, modern CSS core for Lightiz UI Framework.",
   "scripts": {
     "build": "sass --no-source-map --style=compressed ../core/src/styles/local.scss:dist/index.css",

@@ -72,7 +72,7 @@ module.exports = {
 
 ```json
 {
-  "base": "lightizui",
+  "base":"./node_modules/lightiz-ui",
   "components": ["button", "card"]
 }
 ```

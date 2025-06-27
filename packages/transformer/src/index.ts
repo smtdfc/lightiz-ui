@@ -10,7 +10,7 @@ function getComponentCode(
   component: LightizUIComponent
 ): string {
   const cssPath = path.resolve(
-    __dirname,
+    process.cwd(),
     config.base,
     'dist/styles/components',
     `${component}.css`
@@ -29,7 +29,7 @@ function getHelperCode(
   component: LightizUIHelper
 ): string {
   const cssPath = path.resolve(
-    __dirname,
+    process.cwd(),
     config.base,
     'dist/styles/helpers',
     `${component}.css`
@@ -47,7 +47,7 @@ function getBaseCode(
   config: LightizUIConfig,
 ): string {
   const cssPath = path.resolve(
-    __dirname,
+    process.cwd(),
     config.base,
     'dist/styles/',
     `index.css`
