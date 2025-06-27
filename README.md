@@ -90,6 +90,14 @@ const Fragment= <button class="btn btn-primary">Hello</button>;
 
 ---
 
+## 🌏 CDN
+
+```html
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightizui-css/dist/index.css" type="text/css" media="all" />
+```
+
+---
+
 ## 📁 Related Packages
 
 * [`lightizui-transformer`](https://npmjs.com/package/lightizui-transformer): Core transformer to generate CSS from config
