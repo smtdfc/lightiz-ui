@@ -1,0 +1,89 @@
+@use "sass:map";
+@use "../variables/colors" as *;
+
+
+.menu {
+  --menu-bg: map.get($theme,"main-bg");
+  --menu-color: map.get($theme,"main-color");
+  --menu-hover-bg: rgba(0, 0, 0, 0.06);
+  display: flex;
+  background: var(--menu-bg);
+  padding: 0;
+  user-select: none;
+  
+  .menu-item {
+    position: relative;
+    padding: 8px 16px;
+    cursor: pointer;
+    color: var(--menu-color);
+    white-space: nowrap;
+    
+    &:hover {
+      background: var(--menu-hover-bg);
+      
+      >.menu-dropdown {
+        display: block;
+      }
+    }
+    
+    .menu-dropdown {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: var(--menu-bg);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      min-width: 180px;
+      z-index: 100;
+      max-height: 300px;
+      overflow-y: auto;
+      scrollbar-width: thin;
+      scrollbar-color: #aaa transparent;
+      
+      .menu-item {
+        padding: 6px 12px;
+        
+        &:hover>.submenu {
+          display: block;
+        }
+      }
+      
+      &::-webkit-scrollbar {
+        width: 4px;
+      }
+      
+      &::-webkit-scrollbar-thumb {
+        background-color: rgba(0, 0, 0, 0.2);
+        border-radius: 4px;
+      }
+    }
+    
+    .submenu {
+      position: absolute;
+      left: 100%;
+      top: 0;
+      display: none;
+      background: var(--menu-bg);
+      min-width: 180px;
+      z-index: 1000;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      max-height: 300px;
+      overflow-y: auto;
+      scrollbar-width: thin;
+      scrollbar-color: #aaa transparent;
+      
+      &::-webkit-scrollbar {
+        width: 4px;
+      }
+      
+      &::-webkit-scrollbar-thumb {
+        background-color: rgba(0, 0, 0, 0.2);
+        border-radius: 4px;
+      }
+    }
+  }
+  
+  .menu-arrow {
+    float: right;
+  }
+}

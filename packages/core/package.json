@@ -1,12 +1,19 @@
 {
   "name": "lightiz-ui",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "A UI framework powered by configuration-first CSS generation",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
   "scripts": {
-    "prepublishOnly":"npm run build:js && npm run build:style",
-    "build:js":"rollup -c",
-    "build:style":"sass --no-source-map --style=compressed src/styles:dist/styles",
+    "prepublishOnly": "npm run build:js && npm run build:style",
+    "build:js": "rollup -c",
+    "build:style": "sass --no-source-map --style=compressed src/styles:dist/styles",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -28,7 +35,7 @@
     "url": "https://github.com/smtdfc/lightiz-ui/issues"
   },
   "homepage": "https://github.com/smtdfc/lightiz-ui#readme",
-  "files":[
+  "files": [
     "./dist"
   ]
 }
